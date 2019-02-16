@@ -1,0 +1,52 @@
+.aboutus-section{
+    .container{
+        @include position(flex-start, center, column);
+    }
+    &__text{
+        width: 90%;
+        font-family: HelveticaNeueCyr;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+        color: #191919;
+    }
+
+
+    .statistic-block{
+        margin-top: 50px;
+        padding-bottom: 20px;
+        width: 100%;
+        @include position(space-between);
+        
+        &__item{
+            font-family: "HelveticaNeueCyr";
+
+            .number{
+                font-size: 55px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .text{
+                font-size: 20px;
+                padding: 0 10px;
+                color: #414141;
+                font-weight: 400;
+                text-align: center;
+
+                strong{
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("xs"){
+    .aboutus-section{
+        &__text{
+            width: 100%;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+    }
+}

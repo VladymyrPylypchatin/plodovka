@@ -1,0 +1,37 @@
+.section-header{
+    @include position();
+    margin-bottom: 25px;
+    h2{
+        font-family: HelveticaNeueCyr;
+        font-weight: bold;
+        font-size: 45px;
+        text-align: center;
+        color: #414141;
+        margin: 0 30px;
+    }
+    
+    span{
+        width: 100px;
+        height: 2px;
+        background: #414141;
+    }
+}
+
+@include media-breakpoint-down("md"){
+    .section-header{
+        h2{
+            font-size: 30px;
+        }
+    }
+}
+@include media-breakpoint-down("sm"){
+    .section-header{
+        h2{
+            margin: 0 15px;
+            font-size: 24px;
+        }
+        span{
+            display: none;
+        }
+    }
+}

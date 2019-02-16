@@ -1,0 +1,176 @@
+.main-section{
+    position: relative;
+    margin-top: -80px;
+    min-height: 900px;
+    display: flex;
+    align-items: center;
+
+    .container{
+        height: 100vh;
+        position: relative;
+        z-index: 10;
+        @include position(center, stretch, column);
+    }
+    .overlay{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // z-index: 5;
+        opacity: 0.7;
+        background: #000;
+    }
+    &__text{
+        h1{
+            font-family: HelveticaNeueCyr;
+            font-weight: bold;
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            margin-bottom: 30px;
+        }
+        p{
+            font-family: HelveticaNeueCyr;
+            font-weight: 500;
+            font-size: 26px;
+            text-align: center;
+            line-height: 1;
+            color: #fff;
+            text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            
+            span{
+                font-size: 30px;
+            }
+        }
+    }
+    &__leadcontainer{
+        margin-top: 50px;
+        // margin-bottom: 30px;
+        
+        video{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0, 0, 5px, 3px, rgba(0, 0, 0, 0.6);
+        }
+        form{
+            border:  1px solid white;
+            padding: 15px;
+            @include position(stretch, center, column);
+            margin-bottom: 5px;
+
+            input:not(:last-child){
+                margin-bottom: 15px;
+            }
+        }
+        .form-header{
+            font-family: HelveticaNeueCyr;
+            font-weight: 500;
+            font-size: 42px;
+            text-align: center;
+            color: #fff;
+
+        }
+        .form-part{
+            @include position(space-between, stretch, column);
+        }
+    }
+}
+
+@include media-breakpoint-down("lg"){
+    .main-section{
+        min-height: 800px;
+        &__text{
+            // margin-top: 150px;
+            h1{
+                font-size: 40px;
+            }
+            p{
+                font-size: 22px;
+            }
+        }
+        &__leadcontainer{
+            .video-part{
+                @include position(center, flex-end);
+            }
+            .form-header{
+                font-size: 34px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("md"){
+    .main-section{
+        margin-top: -92px;
+        height: 110vh;
+        min-height: 900px;
+        &__text{
+            margin-top: 70px;
+            h1{
+                font-size: 40px;
+            }
+            p{
+                font-size: 22px;
+            }
+        }
+        &__leadcontainer{
+            margin-top: 30px;
+            .video-part{
+                video{
+                    width: 70%;
+                }
+                @include position(center, flex-start);
+            }
+            .form-part{
+                margin-top: 20px;
+                padding: 5px;
+                form{
+                    @include position(space-between);
+
+                    input{
+                        margin: 0;
+                        width: 24%;
+                    }
+                }
+            }
+            .form-header{
+                font-size: 26px;
+            }
+        }
+    }
+}
+@include media-breakpoint-down("xs"){
+    .main-section{
+        margin-top: -138px;
+        height: 110vh;
+        min-height: 600px;
+        &__text{
+            margin-top: 170px;
+            h1{
+                font-size: 22px;
+            }
+            p{
+                font-size: 16px;
+                line-height: 1.2;
+                span{
+                    font-size: 18px;
+                }
+            }
+        }
+        &__leadcontainer{
+            margin-top: 30px;
+            .video-part{
+                video{
+                    width: 100%;
+                }
+                @include position(center, flex-start);
+            }
+            .form-part{
+                display: none;
+            }
+        }
+    }
+}

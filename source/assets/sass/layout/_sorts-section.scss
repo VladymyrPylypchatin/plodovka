@@ -1,0 +1,96 @@
+.sorts-section{
+    &__content{
+        // background: #000;
+        @include position(space-between);
+        flex-wrap: wrap;
+    }
+    &__item{
+        width: 20%;
+        height: 20vw;
+        background: #000;
+        overflow: hidden;
+        border: 1px solid white;
+        position: relative;
+        cursor: pointer;
+
+        img{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .info{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-family: "HelveticaNeueCyr";
+            padding: 20px;
+            opacity: 0;
+            text-align: center;
+            transition: opacity 200ms;
+            @include position(space-between, center, column);
+            
+            h3{
+                font-size: 40px;
+                font-weight: bold;
+            }
+            .count{
+                .number{
+                    font-size: 40px;
+                    line-height: 1;
+                }
+                .text{
+                    font-size: 25px;
+                }
+            }
+            .price{
+                font-size: 25px;
+                margin-bottom: 15px;
+            }
+        }
+
+        &:hover{
+            .info{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("lg"){
+    .sorts-section{
+        &__item{
+            h3{
+                font-size: 30px !important;
+            }
+            .count{
+                .number{
+                    font-size: 30px !important;
+                }
+                .text{
+                    font-size: 15px !important;
+                }
+            }
+            .price{
+                font-size: 18px !important;
+                margin-bottom: 5px !important;
+            }
+            .info{
+                padding: 10px !important;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("sm"){
+    .sorts-section{
+        &__item{
+            width: 50%;
+            height: 50vw;
+        }
+    }
+}

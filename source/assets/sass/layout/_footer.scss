@@ -1,0 +1,60 @@
+#footer{
+    background: rgb(51, 50, 50);
+    color: white;
+    font-family: "HelveticaNeueCyr";
+    .row{
+        padding: 20px 0;
+    }
+    .info{
+        @include position(center, flex-start, column);
+    }
+    .address{
+        @include position();
+        text-align: center;
+        address{
+            margin: 0;
+
+        }
+    }
+    .contacts{
+        @include position(flex-end, stretch, column);
+        text-align: right;
+        a{
+            color: white;
+            font-family: "HelveticaNeueCyr"; 
+        } 
+    }
+    .copyright{
+        border-top: 1px solid white;
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+@include media-breakpoint-down("md"){
+    #footer{
+        font-size: 14px;
+    }
+}
+
+@include media-breakpoint-down("sm"){
+    #footer{
+        .info{
+            text-align: center;
+            align-items: center;
+        }
+        .address{
+            padding: 10px 0;
+            @include position();
+            text-align: center;
+        }
+        .contacts{
+            text-align: center;
+        }
+        .copyright{
+            border-top: 1px solid white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+}

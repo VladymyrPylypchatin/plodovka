@@ -1,0 +1,23 @@
+.partnership-section{
+    h3{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__count-radio{
+        margin: 15px 0 30px 0;
+    }
+    .btn{
+        // margin-left: 15px;
+        width: 270px;
+        
+    }
+}
+
+@include media-breakpoint-down("xs"){
+    .partnership-section{
+        .btn{
+            width: 100%;
+        }
+    }
+}
