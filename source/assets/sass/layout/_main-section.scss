@@ -1,33 +1,24 @@
 .main-section{
     position: relative;
-    margin-top: -80px;
-    min-height: 900px;
     display: flex;
     align-items: center;
 
     .container{
-        height: 100vh;
+        // height: 70vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
         position: relative;
         z-index: 10;
         @include position(center, stretch, column);
     }
-    .overlay{
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        // z-index: 5;
-        opacity: 0.7;
-        background: #000;
-    }
+
     &__text{
         h1{
             font-family: HelveticaNeueCyr;
             font-weight: bold;
             font-size: 50px;
             line-height: 1;
-            text-align: center;
+            text-align: left;
             color: #fff;
             text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
             margin-bottom: 30px;
@@ -36,7 +27,7 @@
             font-family: HelveticaNeueCyr;
             font-weight: 500;
             font-size: 26px;
-            text-align: center;
+            text-align: left;
             line-height: 1;
             color: #fff;
             text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -68,20 +59,26 @@
         .form-header{
             font-family: HelveticaNeueCyr;
             font-weight: 500;
-            font-size: 42px;
+            font-size: 32px;
+            line-height: 1;
             text-align: center;
             color: #fff;
 
         }
         .form-part{
+            padding-bottom: 5px;
             @include position(space-between, stretch, column);
+
+            .btn{
+               
+            }
         }
     }
 }
 
 @include media-breakpoint-down("lg"){
     .main-section{
-        min-height: 800px;
+      
         &__text{
             // margin-top: 150px;
             h1{
@@ -95,20 +92,16 @@
             .video-part{
                 @include position(center, flex-end);
             }
-            .form-header{
-                font-size: 34px;
-            }
         }
     }
 }
 
 @include media-breakpoint-down("md"){
     .main-section{
-        margin-top: -92px;
-        height: 110vh;
-        min-height: 900px;
+        .container{
+            // padding: 20px;
+        }
         &__text{
-            margin-top: 70px;
             h1{
                 font-size: 40px;
             }
@@ -120,37 +113,52 @@
             margin-top: 30px;
             .video-part{
                 video{
-                    width: 70%;
+                    width: 100%;
+                }
+                @include position(center, flex-start);
+            }
+
+        }
+    }
+}
+@include media-breakpoint-down("sm"){
+    .main-section{
+        .container{
+            // padding: 20px;
+        }
+        &__text{
+            h1{
+                font-size: 40px;
+            }
+            p{
+                font-size: 22px;
+            }
+        }
+        &__leadcontainer{
+            margin-top: 30px;
+            .video-part{
+                video{
+                    width: 100%;
                 }
                 @include position(center, flex-start);
             }
             .form-part{
-                margin-top: 20px;
-                padding: 5px;
-                form{
-                    @include position(space-between);
-
-                    input{
-                        margin: 0;
-                        width: 24%;
-                    }
+                .btn{
+                    margin-top: 20px;
                 }
+        
             }
-            .form-header{
-                font-size: 26px;
-            }
+        
         }
     }
 }
+
 @include media-breakpoint-down("xs"){
     .main-section{
-        margin-top: -138px;
-        height: 110vh;
-        min-height: 600px;
         &__text{
-            margin-top: 170px;
             h1{
-                font-size: 22px;
+                font-size: 26px;
+                text-align: center;
             }
             p{
                 font-size: 16px;
@@ -169,7 +177,7 @@
                 @include position(center, flex-start);
             }
             .form-part{
-                display: none;
+              
             }
         }
     }

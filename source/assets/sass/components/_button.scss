@@ -4,6 +4,7 @@
     border-radius: 0;
     height: 50px;
     transition: background-color 300ms, border-color 300ms;
+    @include position();
 
     &_purpure{
         background: #4F089F;
@@ -14,6 +15,44 @@
             background: rgba(78, 8, 159, 0.925);
             border-color: rgba(78, 8, 159, 0.925);
             color: white;
+        }
+    }
+
+    &_orange{
+        flex-direction: column;
+        background: #FCA01A;
+        color: white;
+        
+        img{
+            width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+        } 
+        height: 48%;
+        font-size: 25px;
+    }
+}
+
+@include media-breakpoint-down("md"){
+    .btn{
+        &_orange{
+            padding: 15px;
+            img{
+                width: 30px;
+            }
+            font-size: 16px;
+        }
+    }
+}
+
+@include media-breakpoint-down("sm"){
+    .btn{
+
+        &_orange{
+            flex-direction: row;
+            img{
+                margin-right: 25px;
+            }
         }
     }
 }
