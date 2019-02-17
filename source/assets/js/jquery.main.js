@@ -35,8 +35,6 @@
             Request.send(null);
         }
     }
-
-
     function getFormValues($form){
         data = {};
         data['name'] = $form.find('input[name=name]').val();
@@ -54,7 +52,14 @@
             fixedContentPos: true,
             mainClass: 'mfp-fade',
         });
-		$('#thanks-popup .btn').click(function(){
+
+        $('.popup-thanks').magnificPopup({
+            type: 'inline',
+            fixedContentPos: true,
+            mainClass: 'mfp-fade',
+        });
+
+		$('.close-popup').click(function(){
             $.magnificPopup.close();
         });
 
@@ -62,13 +67,8 @@
             var response = Request.responseText;
             if(response == 1){
                 dataLayer.push({"event":"send_form"}); 
-                
-                var link = document.createElement('a');
-                link.setAttribute('href','price.doc');
-                link.setAttribute('download','download');
-                link.click();
-
-                $('.popup-content').magnificPopup("open");
+                fbq("track", "Lead");
+                $('.popup-thanks').magnificPopup("open");
             } 
                 
         };
@@ -79,10 +79,13 @@
             console.log(jsonData);
             
             SendRequest("POST", "mailer.php", 'data='+jsonData, handler);
-        
             
-        
-            // тут ajax запрос
+            $(this).find("input").val("Спасибо за заявку");
+        });
+
+        $("#consult-popup").on("submit", function(event){
+            event.preventDefault();
+            $.magnificPopup.close();
         });
     });
     
