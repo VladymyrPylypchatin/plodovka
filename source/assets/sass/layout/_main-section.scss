@@ -2,6 +2,10 @@
     position: relative;
     display: flex;
     align-items: center;
+    background: #528A4A;
+    .bg-stretch{
+        z-index: 10;
+    }
 
     .container{
         // height: 70vh;
@@ -34,6 +38,7 @@
             
             span{
                 font-size: 30px;
+                text-decoration: underline;
             }
         }
     }
@@ -59,7 +64,7 @@
         .form-header{
             font-family: HelveticaNeueCyr;
             font-weight: 500;
-            font-size: 32px;
+            font-size: 40px;
             line-height: 1;
             text-align: center;
             color: #fff;
@@ -68,10 +73,9 @@
         .form-part{
             padding-bottom: 5px;
             @include position(space-between, stretch, column);
+            overflow: hidden;
+            position: relative;
 
-            .btn{
-               
-            }
         }
     }
 }
@@ -91,6 +95,17 @@
         &__leadcontainer{
             .video-part{
                 @include position(center, flex-end);
+            }
+            .form-part{
+                .form-header{
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
+                form{
+                    input{
+                        margin-bottom: 17px;
+                    }
+                }
             }
         }
     }
@@ -117,7 +132,21 @@
                 }
                 @include position(center, flex-start);
             }
+            .form-part{
+                margin-top: 30px;
+                form{
+                    @include position(space-between);
+                    flex-wrap: wrap;
+                    input, button{
+                        margin-bottom: 0;  
+                        width: 49%;
 
+                        &:nth-child(1), &:nth-child(2){
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -143,9 +172,7 @@
                 @include position(center, flex-start);
             }
             .form-part{
-                .btn{
-                    margin-top: 20px;
-                }
+
         
             }
         
@@ -158,10 +185,10 @@
         &__text{
             h1{
                 font-size: 26px;
-                text-align: center;
+                text-align: left;
             }
             p{
-                font-size: 16px;
+                font-size: 18px;
                 line-height: 1.2;
                 span{
                     font-size: 18px;
@@ -177,7 +204,7 @@
                 @include position(center, flex-start);
             }
             .form-part{
-              
+              display: none;
             }
         }
     }

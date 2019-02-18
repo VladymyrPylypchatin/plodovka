@@ -63,11 +63,17 @@
             $.magnificPopup.close();
         });
 
+        $(".sorts-section__item").click(function(){
+            fbq("track", "TreesSortsClick");
+        });
+
         var handler = function (Request){
             var response = Request.responseText;
             if(response == 1){
+
                 dataLayer.push({"event":"send_form"}); 
                 fbq("track", "Lead");
+
                 $('.popup-thanks').magnificPopup("open");
             } 
                 
@@ -77,14 +83,22 @@
             event.preventDefault(); // отменяем событие по умолчанию
             var jsonData = JSON.stringify(getFormValues($(this)));
             console.log(jsonData);
+
+            var purpose = $(this).attr("data-purpose");
+            if(purpose == "price-list"){
+                var link = document.createElement('a');
+                link.setAttribute('href','/price.doc');
+                link.setAttribute('download','price.doc');
+                link.click();
+            }
             
             SendRequest("POST", "mailer.php", 'data='+jsonData, handler);
             
-            $(this).find("input").val("Спасибо за заявку");
+            // $(this).find("input").val("Спасибо за заявку");
         });
 
         $("#consult-popup").on("submit", function(event){
-            event.preventDefault();
+            fbq("track", "LeadConsultation");
             $.magnificPopup.close();
         });
     });
