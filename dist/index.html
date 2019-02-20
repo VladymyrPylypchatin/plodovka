@@ -72,7 +72,7 @@
 						<p><strong>
 							Более <span>310</span> сортов плодовых саженцев от <span>25</span> до <span>35</span> грн. 
 						</strong></p>
-						<p>Кронированные саженцы с красивой разветвленной корневой системой и толстым стволом. Доставка по всей Украине. Оплата при получении или под реализацию.  </p>
+						<p>Кронированные саженцы с красивой разветвленной корневой системой. Крупным и мелким оптом - от 10 саженцев одного вида. Саженцы под реализацию. Доставка по всей Украине. </p>
 					</div>
 					<div class="main-section__leadcontainer row">
 						<div class="col-xl-7 col-lg-7  video-part">
@@ -83,9 +83,9 @@
 						<div class="col-xl-5 col-lg-5  form-part">
 							<h3 class="form-header">Получить прайс-лист</h3>
 							<form action="/" method="POST" class="main-section__form lead-form" data-purpose="price-list">
-								<input type="text" class="form-control" name="name" placeholder="Ваше имя">
-								<input type="email" class="form-control"  name="email" required placeholder="Ваш Email">
-								<input type="text" class="form-control"  name="phone" required placeholder="Номер телефона"> 
+								<input type="text" class="form-control reset" name="name" placeholder="Ваше имя">
+								<input type="email" class="form-control reset"  name="email" required placeholder="Ваш Email">
+								<input type="text" class="form-control reset"  name="phone" required placeholder="Номер телефона"> 
 								<button type="submit" class="btn btn_orange"  value="Получить" class="btn btn_purpure">
 										<img src="assets/img/file.svg" alt="">
 										<span>Скачать прайс-лист</span>
@@ -105,10 +105,10 @@
 							<h2>Получить прайс лист</h2>
 							<span></span>
 						</div>				
-						<form action="/" method="POST" class="main-section__form lead-form">
-							<input type="text" class="form-control" name="name" placeholder="Ваше имя">
-							<input type="email" class="form-control"  name="email" required placeholder="Ваш Email">
-							<input type="text" class="form-control"  name="phone" required placeholder="Номер телефона"> 
+						<form data-purpose="price-list" action="/" method="POST" class="main-section__form lead-form">
+							<input type="text" class="form-control reset" name="name" placeholder="Ваше имя">
+							<input type="email" class="form-control reset"  name="email" required placeholder="Ваш Email">
+							<input type="text" class="form-control reset"  name="phone" required placeholder="Номер телефона"> 
 							<button type="submit" class="btn btn_orange"  value="Получить" class="btn btn_purpure">
 									<img src="assets/img/file.svg" alt="">
 									<span>Скачать прайс-лист</span>
@@ -129,7 +129,7 @@
 					<div class="aboutus-section__text">
 						Питомник PlodovkaOpt начал свою работу в 1988 году в одном из 
 						центров питомниководства Украины (Бахмутский район). 
-						На сегодняшний день мы выращиваем более 310 сортов саженцев: яблони, груши, вишни, черешни, персика, нектарина, сливы, абрикоса, айвы, крыжовника, малины и штамбовой розы.
+						На сегодняшний день мы выращиваем более 310 сортов саженцев: яблони, груши, вишни, черешни, персика, нектарина, сливы, абрикоса, айвы и штамбовой розы.
 						Основным нашем направлениями продаж являются мелкий и крупный опт. Мы работаем с агро-компаниям, предпринимателями и просто людьми кому необходимо купить саженцы по выгодным ценам. 
 					</div>
 					
@@ -371,15 +371,15 @@
 						<div class="row">
 							<div class="form-group col-xl-4 col-lg-4 col-md-4">
 								<label for="name-partner">Ваше имя</label>
-								<input type="text" class="form-control" id="name-partner" name="name" placeholder="Имя">
+								<input type="text" class="form-control reset" id="name-partner" name="name" placeholder="Имя">
 							</div>
 							<div class="form-group col-xl-4 col-lg-4 col-md-4">
 								<label for="phone-partner">Ваш номер телефона</label>
-								<input type="text" class="form-control" id="phone-partner" name="phone" required  placeholder="+380 (__) ___-__-__">
+								<input type="text" class="form-control reset" id="phone-partner" name="phone" required  placeholder="+380 (__) ___-__-__">
 							</div>
 							<div class="form-group col-xl-4 col-lg-4 col-md-4">
 								<label for="email-partner">Ваш Email-адрес</label>
-								<input type="email" class="form-control" id="email-partner" name="email" required placeholder="Email">
+								<input type="email" class="form-control reset" id="email-partner" name="email" required placeholder="Email">
 							</div>
 						</div>
 						<div class="form-group partnership-section__count-radio">
@@ -453,12 +453,17 @@
 			<div id="consult-popup" class="mfp-hide popup">
 				<h3>Заказать саженцы</h3>
 				<form action="/" class="lead-form">
-					<input type="text" class="form-control" name="name" required  placeholder="Ваше имя">
-					<input type="email" class="form-control" name="email" placeholder="Ваш e-mail">
-					<input type="tel" class="form-control" name="phone" required  placeholder="Ваш телефон">
+					<input type="text" class="form-control reset" name="name" required  placeholder="Ваше имя">
+					<input type="email" class="form-control reset" name="email" placeholder="Ваш e-mail">
+					<input type="tel" class="form-control reset" name="phone" required  placeholder="Ваш телефон">
 					<button class="btn btn_purpure">Отправить заявку</button>
 				</form>
 			</div>
+
+			<div  class="preloader">
+					<img src="assets/img/p2.gif" alt="">
+			</div>
+
 			    <!-- <div id="preloader-popup" class="mfp-hide popup">
 					<img src="assets/img/loading83.gif" alt="">
 				</div> -->

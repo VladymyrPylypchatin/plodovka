@@ -61,6 +61,7 @@
 
 		$('.close-popup').click(function(){
             $.magnificPopup.close();
+            console.log('close');
         });
 
         $(".sorts-section__item").click(function(){
@@ -70,20 +71,22 @@
         var handler = function (Request){
             var response = Request.responseText;
             if(response == 1){
-
                 dataLayer.push({"event":"send_form"}); 
-                fbq("track", "Lead");
-
-                $('.popup-thanks').magnificPopup("open");
-            } 
-                
+                fbq("track", "Lead");              
+                $('.preloader').css({display:'flex'});
+                $('.reset').val('');
+                setTimeout(function(){
+                    $('.preloader').css({display:'none'});
+                    $('.popup-thanks').magnificPopup("open");  
+                  }, 2000);               
+            }            
         };
         
         $('.lead-form').on('submit', function(event) {
             event.preventDefault(); // отменяем событие по умолчанию
+
             var jsonData = JSON.stringify(getFormValues($(this)));
             console.log(jsonData);
-
             var purpose = $(this).attr("data-purpose");
             if(purpose == "price-list"){
                 var link = document.createElement('a');

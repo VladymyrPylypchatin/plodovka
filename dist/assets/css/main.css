@@ -5008,6 +5008,22 @@ h1, h2, h3, h4, h5, h6 {
     .popup h3 {
       margin-top: 30px; } }
 
+.preloader {
+  border: 1px solid;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.3); }
+
 #header {
   background: white;
   color: #2b2b2b;

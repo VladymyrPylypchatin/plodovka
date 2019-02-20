@@ -9,6 +9,8 @@
         mail("zhivovsad1962@gmail.com", "Заявка на саженцы PlodovkaOpt", "Имя: " . $name . "; E-mail - " . $email . "; Телефон - " . $phone);
         mail("plodovkaopt@gmail.com", "Заявка на саженцы PlodovkaOpt", "Имя: " . $name . "; E-mail - " . $email . "; Телефон - " . $phone);
         echo 1;
+   
+        
     } else {
         echo 2;
     }
