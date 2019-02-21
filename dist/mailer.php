@@ -15,6 +15,7 @@
         $password = 'qwe321qwe'; // пароль
 
         $db = mysqli_connect($host, $user, $password, $database); 
+        mysqli_set_charset($db, 'utf8');
         $query = "INSERT INTO lead (name, email, phone) VALUES ('".$name."', '".$email."', '".$phone."')";
         $result = mysqli_query($db, $query) or die("Ошибка " . mysqli_error($db));
         mysqli_close($db);
