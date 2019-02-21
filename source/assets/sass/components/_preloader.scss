@@ -1,13 +1,6 @@
    .preloader{
-    border: 1px solid;
-    display:none;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    background-color: rgba(0,0,0,0.3);
+      @include position(center, center, column);
+      height: 300px; 
+      border-radius: 0;
    }
     

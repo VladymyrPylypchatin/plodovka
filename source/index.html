@@ -64,13 +64,13 @@
 			<!-- Main screen start -->
 			<section class="main-section">
 				<div class="bg-stretch">
-					<img src="assets/img/bg-main.png" alt="">
+					<img src="assets/img/bg-main.webp" alt="">
 				</div>
 				<div class="container">
 					<div class="main-section__text">
 						<h1>Плодовые саженцы Оптом от производителя с Опытом более 30 лет.</h1>
 						<p><strong>
-							Более <span>310</span> сортов плодовых саженцев от <span>25</span> до <span>35</span> грн. 
+							Более <span>310</span> сортов плодовых саженцев от <span>15</span> до <span>35</span> грн. 
 						</strong></p>
 						<p>Кронированные саженцы с красивой разветвленной корневой системой. Крупным и мелким оптом - от 10 саженцев одного вида. Саженцы под реализацию. Доставка по всей Украине. </p>
 					</div>
@@ -106,15 +106,9 @@
 							<span></span>
 						</div>				
 						<form data-purpose="price-list" action="/" method="POST" class="main-section__form lead-form">
-<<<<<<< HEAD
-							<input type="text" class="form-control reset" name="name" placeholder="Ваше имя">
-							<input type="email" class="form-control reset"  name="email" required placeholder="Ваш Email">
-							<input type="text" class="form-control reset"  name="phone" required placeholder="Номер телефона"> 
-=======
 							<input type="text" class="form-control" name="name" placeholder="Ваше имя">
 							<input type="email" class="form-control"  name="email" required placeholder="Ваш Email">
 							<input type="text" class="form-control"  name="phone" required placeholder="Номер телефона"> 
->>>>>>> 93c714ec950475aadfe4aa59e43ed26e7fac92c0
 							<button type="submit" class="btn btn_orange"  value="Получить" class="btn btn_purpure">
 									<img src="assets/img/file.svg" alt="">
 									<span>Скачать прайс-лист</span>
@@ -466,8 +460,9 @@
 				</form>
 			</div>
 
-			<div  class="preloader">
-					<img src="assets/img/p2.gif" alt="">
+			<div id="preloader-popup" class="preloader mfp-hide popup">
+				<h3>Загрузка Прайс-листа</h3>	
+				<img src="assets/img/p2.gif" alt="">
 			</div>
 
 			    <!-- <div id="preloader-popup" class="mfp-hide popup">
@@ -478,6 +473,7 @@
 	</div>
 
 	<a href="#thanks-popup" class="popup-thanks d-none">Вызвать окно с текстом</a>
+	<a href="#preloader-popup" class="preloader-popup d-none">Вызвать окно с текстом</a>
 
 
 	<!-- Scripts -->

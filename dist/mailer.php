@@ -8,6 +8,17 @@
         
         mail("zhivovsad1962@gmail.com", "Заявка на саженцы PlodovkaOpt", "Имя: " . $name . "; E-mail - " . $email . "; Телефон - " . $phone);
         mail("plodovkaopt@gmail.com", "Заявка на саженцы PlodovkaOpt", "Имя: " . $name . "; E-mail - " . $email . "; Телефон - " . $phone);
+        
+        $host = 'a213547.mysql.mchost.ru'; // адрес сервера 
+        $database = 'a213547_plodovka'; // имя базы данных
+        $user = 'a213547_plodovka'; // имя пользователя
+        $password = 'qwe321qwe'; // пароль
+
+        $db = mysqli_connect($host, $user, $password, $database); 
+        $query = "INSERT INTO lead (name, email, phone) VALUES ('".$name."', '".$email."', '".$phone."')";
+        $result = mysqli_query($db, $query) or die("Ошибка " . mysqli_error($db));
+        mysqli_close($db);
+
         echo 1;
    
         
