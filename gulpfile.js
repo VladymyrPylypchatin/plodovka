@@ -150,6 +150,12 @@ gulp.task('html', function () {
     .pipe(browserSync.reload({stream: true}));
 });
 
+// Transport html
+gulp.task('utils', function () {
+    return gulp.src(['source/utils/**/*']).
+    pipe(gulp.dest('dist/utils/'));
+});
+
 //Watch
 gulp.task('watch', ['build', 'browser-sync', ], function () {
     gulp.watch('source/assets/sass/**/*.scss', ['sass']);
@@ -162,7 +168,7 @@ gulp.task('watch', ['build', 'browser-sync', ], function () {
 });
 
 //Build
-gulp.task('build', ['clean', 'html', 'sass', 'css-libs', 'scripts-libs',  'scripts', 'img', 'fonts'], function () {
+gulp.task('build', ['clean', 'html', 'utils', 'sass', 'css-libs', 'scripts-libs',  'scripts', 'img', 'fonts'], function () {
     // var buildCss = gulp.src([
     //     'source/assets/css/main.css',
     //     'source/assets/css/libs.min.css',
