@@ -1,0 +1,34 @@
+.advantages{
+
+    .container{
+        align-items:stretch;
+    }
+    .advantages__item{
+        font-family: HelveticaNeueCyr;
+        background-color: #ffffff;
+        text-align: left;    
+        margin-top:40px;
+
+        div{
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16); 
+            height: 100%;  
+            padding: 0 10px;
+            border-left:3px solid #fca01a;
+        }
+
+        h3{
+            font-size: 20px;
+            line-height: 22px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 0;
+        }
+    }
+}
