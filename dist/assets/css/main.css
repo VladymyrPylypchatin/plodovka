@@ -5635,3 +5635,32 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 576px) {
   .mobileprice-section {
     display: none; } }
+
+.advantages .container {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
+
+.advantages .advantages__item {
+  font-family: HelveticaNeueCyr;
+  background-color: #ffffff;
+  text-align: left;
+  margin-top: 40px; }
+  .advantages .advantages__item div {
+    -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+    height: 100%;
+    padding: 5px 10px;
+    border-left: 3px solid #fca01a; }
+  .advantages .advantages__item h3 {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px; }
+  .advantages .advantages__item p {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 0; }
