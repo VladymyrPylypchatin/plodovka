@@ -5039,7 +5039,7 @@ h1, h2, h3, h4, h5, h6 {
     -o-transition: opacity 300ms;
     transition: opacity 300ms; }
     #price-popup .screen img {
-      height: 65%;
+      height: 140px;
       width: auto;
       margin: auto; }
     #price-popup .screen .btn:not(:last-child) {
@@ -5047,6 +5047,11 @@ h1, h2, h3, h4, h5, h6 {
     #price-popup .screen.active {
       opacity: 1;
       pointer-events: auto; }
+
+@media (max-width: 767.98px) {
+  #price-popup {
+    height: 100vh;
+    width: 100vw; } }
 
 #header {
   background: white;
