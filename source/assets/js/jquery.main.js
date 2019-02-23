@@ -47,6 +47,8 @@
 
 
     $(document).ready(function() {
+        $("input[type=tel]").mask("+38 (000) 000-00-00");
+
    		$('.popup-content').magnificPopup({
             type: 'inline',
             fixedContentPos: true,
@@ -131,7 +133,10 @@
             fbq("track", "LeadConsultation");
             $.magnificPopup.close();
         });
+
+      
     });
     
+   
 
 }(jQuery));

@@ -53,7 +53,8 @@ gulp.task('scripts', function () {
 gulp.task('scripts-libs', function () {
     return gulp.src([
         'source/assets/libs/jquery/dist/jquery.min.js',
-        'source/assets/libs/Magnific-Popup-master/dist/jquery.magnific-popup.min.js'
+        'source/assets/libs/Magnific-Popup-master/dist/jquery.magnific-popup.min.js',
+        'source/assets/libs/phonemask/jquery.mask.min.js',
         // 'source/assets/libs/jquery.mmenu/dist/jquery.mmenu.js',
         // 'source/assets/libs/owlcarusel/owl.carousel.min.js',
     ])
