@@ -1,0 +1,34 @@
+#price-popup{
+   border-radius: 0;
+   position: relative;
+   height: 320px;;
+   
+   .screen{
+      @include position(flex-start, center, column);
+      top: 0;
+      left: 0;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      padding: 30px;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      transition: opacity 300ms;
+
+      img{
+         height: 65%;
+         width: auto;
+         margin: auto;
+      }
+      .btn:not(:last-child){
+         margin-bottom: 15px;
+      }
+
+      &.active{
+         opacity: 1;
+         pointer-events: auto;
+      }
+   }
+}
+    

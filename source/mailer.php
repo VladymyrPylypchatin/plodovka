@@ -53,6 +53,7 @@
         $email = (!empty($data->email) && isset($data->email)) ? $data->email : "No email";
         $phone = (!empty($data->phone) && isset($data->phone)) ? $data->phone : "No phone";
         
+        // TODO: uncomment
         
         $host = 'a213547.mysql.mchost.ru'; // адрес сервера 
         $database = 'a213547_plodovka'; // имя базы данных

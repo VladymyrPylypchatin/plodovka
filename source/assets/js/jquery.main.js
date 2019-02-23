@@ -44,6 +44,9 @@
         return data;
         
     }
+    function priceFormSteps(){
+       
+    }
 
 
     $(document).ready(function() {
@@ -64,51 +67,64 @@
 		$('.close-popup').click(function(){
             $.magnificPopup.close();
             console.log('close');
+
+            
         });
 
-        $('.preloader-popup').magnificPopup({
+        $('.price-popup').magnificPopup({
             type: 'inline',
             fixedContentPos: true,
-            showCloseBtn: false
+            mainClass: 'mfp-fade',
+            callbacks: {
+                open: function() {
+                    var $popup = $("#price-popup");
+                    $popup.find(".btn-next").click(function(){
+                        var type = $(this).attr("data-donwloadtype");
+                        if(type == "email") $popup.find(".direct").hide();
+                        if(type == "direct") $popup.find(".email").hide();
+                        
+                        $popup.find(".screen").removeClass("active");
+                        $popup.find(".screen:nth-child(2)").addClass("active");
+            
+                        setTimeout(function(){
+                            if(type == "direct"){
+                                var link = document.createElement('a');
+                                link.setAttribute('href','/price.doc');
+                                link.setAttribute('download','price.doc');
+                                link.click();          
+                            }
+            
+                            $popup.find(".screen").removeClass("active");
+                            $popup.find(".screen:nth-child(3)").addClass("active");
+                        }, 2000);
+                    });
+                },
+                close: function() {
+                    var $popup = $("#price-popup");
+                    $popup.find(".email, .direct").show();
+                    $popup.find(".screen").removeClass("active");
+                    $popup.find(".screen:nth-child(1)").addClass("active");
+                }
+            }
         });
         
 
         $(".sorts-section__item").click(function(){
             fbq("track", "TreesSortsClick");
         });
-
+        // TODO: uncomment event
         var popupHandler = function (Request){
             var response = Request.responseText;
             if(response == 1){
-                dataLayer.push({"event":"send_form"}); 
-                fbq("track", "Lead");  
-
-                
-                // setTimeout(function(){
-                    $('.reset').val('');
-                    $('.popup-thanks').magnificPopup("open");  
-                // }, 2000);               
+                $('.popup-thanks').magnificPopup("open");                 
             }            
         };
 
         var popupPriceHandler = function (Request){
             var response = Request.responseText;
             if(response == 1){
-                dataLayer.push({"event":"send_form"}); 
+                $('.price-popup').magnificPopup("open");           
                 dataLayer.push({"event":"get_price"}); 
-                fbq("track", "Lead");  
-                
-                $('.preloader-popup').magnificPopup("open");
-                
-                setTimeout(function(){
-                    var link = document.createElement('a');
-                    link.setAttribute('href','/price.doc');
-                    link.setAttribute('download','price.doc');
-                    link.click();                
-                    
-                    $('.reset').val('');
-                    $('.popup-thanks').magnificPopup("open");  
-                }, 2000);             
             } else {
                 console.log(response);
             }           
@@ -120,6 +136,7 @@
             var jsonData = JSON.stringify(getFormValues($(this)));
             console.log(jsonData);
             
+            $('.reset').val('');
             
             var purpose = $(this).attr("data-purpose");
             if(purpose == "price-list"){
@@ -127,6 +144,9 @@
             } else{
                 SendRequest("POST", "mailer.php", 'data='+jsonData, popupHandler);
             }
+
+            fbq("track", "Lead");
+            dataLayer.push({"event":"send_form"}); 
         });
 
         $("#consult-popup").on("submit", function(event){
